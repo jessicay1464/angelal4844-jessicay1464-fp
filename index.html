@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+
+        </style>
+
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="module">
+
+            // import kaboom lib
+            import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
+            // initialize kaboom context
+            kaboom(
+                background: [0,0,0],
+            );
+
+            scene("firstLevel", (levelIdx) => {
+
+const SPEED = 320
+
+const levels = [
+    [
+        "=====^=======^======",
+        "=                  =",
+        "= @                =",
+        "=      $           =",
+        "=                  =",
+        "=               $  =",
+        "=                  =",
+        "=              @   =",
+        "====================",
+    ],
+    [
+        "---------------------",
+        "^        @          -",
+        "-                   -",
+        "-  $          $     -",
+        "^                   -",
+        "-        @          -",
+        "-                   -",
+        "-              @    -",
+        "---------------------",
+    ],
+]
+
+addLevel(levels[levelIdx], {
+    width: 64,
+    height: 64,
+    pos: vec2(64, 64),
+    "=": () => [
+        sprite("block"),
+        area(),
+        solid(),
+    ],
+    "-": () => [
+        sprite("block2"),
+        area(),
+        solid(),
+    ],
+    "$": () => [
+        sprite("key"),
+        area(),
+        "key",
+    ],
+    "@": () => [
+        sprite("chest"),
+        area(),
+        solid(),
+        "player",
+    ],
+    "^": () => [
+        sprite("door"),
+        area(),
+        solid(),
+        "door",
+    ],
+})
+
+go ("firstLevel", 0);
+
+        </script>
+    </body>
+</html>

@@ -22,74 +22,22 @@
 
             // import kaboom lib
             import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
-            // initialize kaboom context
-            kaboom(
-                background: [0,0,0],
-            );
+            // const kaboom = require("kaboom");
 
-            scene("firstLevel", (levelIdx) => {
+            kaboom();
+            //Loading the Sprite
+            loadSprite("background2", "img/background2.png"); // bakcground color for level 1
+            loadSprite("block", "img/block.png"); // bakcground color for level 2
+            loadSprite("egg", "img/egg.png"); // bakcground color for level 3
+            loadSprite("cheese", "img/cheese.png"); // bakcground color for level 4
+            loadSprite("flour", "img/flour.png"); // main character
+            loadSprite("tomato", "img/tomato.png"); // main character
 
-const SPEED = 320
+            // add ([
+            // // sprite("background2", {width: width(800), height: height(800)}) // backgprund code
+            // ])
 
-const levels = [
-    [
-        "=====^=======^======",
-        "=                  =",
-        "= @                =",
-        "=      $           =",
-        "=                  =",
-        "=               $  =",
-        "=                  =",
-        "=              @   =",
-        "====================",
-    ],
-    [
-        "---------------------",
-        "^        @          -",
-        "-                   -",
-        "-  $          $     -",
-        "^                   -",
-        "-        @          -",
-        "-                   -",
-        "-              @    -",
-        "---------------------",
-    ],
-]
 
-addLevel(levels[levelIdx], {
-    width: 64,
-    height: 64,
-    pos: vec2(64, 64),
-    "=": () => [
-        sprite("block"),
-        area(),
-        solid(),
-    ],
-    "-": () => [
-        sprite("block2"),
-        area(),
-        solid(),
-    ],
-    "$": () => [
-        sprite("key"),
-        area(),
-        "key",
-    ],
-    "@": () => [
-        sprite("chest"),
-        area(),
-        solid(),
-        "player",
-    ],
-    "^": () => [
-        sprite("door"),
-        area(),
-        solid(),
-        "door",
-    ],
-})
-
-go ("firstLevel", 0);
 
         </script>
     </body>

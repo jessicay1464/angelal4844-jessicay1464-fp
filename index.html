@@ -24,50 +24,49 @@
             import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
             // const kaboom = require("kaboom");
 
-            kaboom();
-            //Loading the Sprite
-            loadSprite("background2", "img/background2.png"); // background (Level 2)
-            loadSprite("block", "img/block.png"); // block (Level 2)
-            loadSprite("egg", "img/egg.png"); //egg
-            loadSprite("cheese", "img/cheese.png"); // cheese
-            loadSprite("flour", "img/flour.png"); //  flour
-            loadSprite("tomato", "img/tomato.png"); // tomato
+            kaboom({
+                background: [0, 0, 0];
+            });
+            // Loading the Sprite
+            // loadSprite("background2", "img/background2.png"); // background (Level 2)
+            // loadSprite("block", "img/block.png"); // block (Level 2)
+            // loadSprite("egg", "img/egg.png"); //egg
+            // loadSprite("cheese", "img/cheese.png"); // cheese
+            // loadSprite("flour", "img/flour.png"); //  flour
+            // loadSprite("tomato", "img/tomato.png"); // tomato
 
-            const SPEED = 480
-            const gravity = 240;
+            // const SPEED = 480;
+            // const gravity = 240;
 
-            const JUMP_FORCE = 1320
-            const MOVE_SPEED = 480
-            const FALL_DEATH = 2400
+            // const JUMP_FORCE = 1320;
+            // const MOVE_SPEED = 480;
+            // const FALL_DEATH = 2400;
 
-            addLevel([
-    "                             ",
-    "=                           =",
-    "=                           =",
-    "=                           =",
-    "=                           =",
-    "=                           =",
-    "============================",
-], {
-    // define the size of each block
-    width: 12,
-    height: 12,
-    // define what each symbol means, by a function returning a component list (what will be passed to add())
-    "=": () => [
-        sprite("block"),
-        area(),
-        solid(),
-        width(23),
-        height(23),
-    ],
-})
+            // addLevel([
+            //     "                             ",
+            //     "=                           =",
+            //     "=                           =",
+            //     "=                           =",
+            //     "=                           =",
+            //     "=                           =",
+            //     "============================",
+            // ], {
+            //     // define the size of each block
+            //     width: 12,
+            //     height: 12,
+            //     // define what each symbol means, by a function returning a component list (what will be passed to add())
+            //     "=": () => [
+            //         sprite("block"),
+            //         area(),
+            //         solid(),
+            //         width(23),
+            //         height(23),
+            //     ],
+            // })
 
-            // add ([
-            // // sprite("background2", {width: width(800), height: height(800)}) // backgprund code
-            // ])
-
-
-
+                        // add ([
+                        // // sprite("background2", {width: width(800), height: height(800)}) // backgprund code
+                        // ])
         </script>
     </body>
 </html>

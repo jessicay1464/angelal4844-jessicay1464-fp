@@ -58,26 +58,27 @@
 	        player.move(0, SPEED)
                 })
 
+
             addLevel([
                 "                                   ",
+                "               ^.                  ",
                 "                                   ",
                 "                                   ",
                 "                                   ",
-                "                          ^         ",
-                "                                   ",
+                "                                  ",
                 "xxxxxxxxxxx     xxxxxxxxxxxxxxxxxxx",
                 "x          x                      x",
-                "x           x                     x",
-                "x            x          ^         x",
-                "x             x                   x",
+                "x           x         ^           x",
+                "x            x                    x",
+                "x ^           x                   x",
                 "x              x                  x",
                 "x               x                 x",
                 "x                x                x",
-                "x                 x            ^  x",
+                "x                 x               x",
                 "x                  x              x",
                 "x                                 x",
                 "x                                 x",
-                "x          ^                      x",
+                "x                                 x",
                 "x                                 x",
                 "x                                 x",
                 "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -94,7 +95,7 @@
                 height: 65,
                 "^": () => [
                     sprite("table"),
-                    scale(0.5),
+                    scale(0.8),
                 ],
                 "A": () => [
                     sprite("bread"),
@@ -103,6 +104,7 @@
             }
         })
 
+        
 
         </script>
     </body>

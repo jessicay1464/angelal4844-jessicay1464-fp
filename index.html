@@ -27,6 +27,7 @@
             loadSprite("background", "img/background-3.jpg");
             loadSprite("block", "img/block-6.png");
             loadSprite("table", "img/table.png");
+            loadSprite("bread", "img/bread.png");
 
             add ([
                 sprite("background", {width: width(), height: height()})
@@ -56,46 +57,50 @@
 	        player.move(0, SPEED)
                 })
 
-                addLevel([
-    "                                   ",
-    "                                   ",
-    "                                   ",
-    "                                   ",
-    "                                   ",
-    "                                   ",
-	"xxxxxxxxxxx     xxxxxxxxxxxxxxxxxxx",
-	"x                                 x",
-	"x                                 x",
-	"x                      ^          x",
-	"x                                 x",
-	"x                                 x",
-	"x    ^                            x",
-    "x                                 x",
-	"x                             ^   x",
-	"x                                 x",
-    "x                                 x",
-	"x                                 x",
-	"x          ^                      x",
-    "x                                 x",
-	"x                                 x",
-	"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-], {
-    tileWidth: 40,
-    tileHeight: 30,
+            addLevel([
+                "                                   ",
+                "                                   ",
+                "                                   ",
+                "                                   ",
+                "                                   ",
+                "                                   ",
+                "xxxxxxxxxxx     xxxxxxxxxxxxxxxxxxx",
+                "x                                 x",
+                "x                                 x",
+                "x                      ^          x",
+                "x                                 x",
+                "x    A                             x",
+                "x    ^                            x",
+                "x                                 x",
+                "x                             ^   x",
+                "x                                 x",
+                "x                                 x",
+                "x                                 x",
+                "x          ^                      x",
+                "x                                 x",
+                "x                                 x",
+                "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            ], {
+            tileWidth: 40,
+            tileHeight: 30,
 
-	tiles: {
-        "x": () => [
-		sprite("block"),
-    scale(0.1),
-	],
-	width: 65,
-	height: 65,
-	"^": () => [
-		sprite("table"),
-    scale(0.5),
-	],
-    }
-})
+            tiles: {
+                "x": () => [
+                    sprite("block"),
+                    scale(0.1),
+                ],
+                width: 65,
+                height: 65,
+                "^": () => [
+                    sprite("table"),
+                    scale(0.5),
+                ],
+                "A": () => [
+                    sprite("bread"),
+                    scale(0.4),
+                ]
+            }
+        })
         </script>
     </body>
 </html>

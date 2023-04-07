@@ -27,6 +27,7 @@
             loadSprite("background", "img/background-3.jpg");
             loadSprite("block", "img/block-6.png");
             loadSprite("table", "img/table.png");
+            loadSprite("bread", "img/bread.png");
 
 
             add ([
@@ -57,71 +58,52 @@
 	        player.move(0, SPEED)
                 })
 
-                // scene("main", (levelIdx) => {
+            addLevel([
+                "                                   ",
+                "                                   ",
+                "                                   ",
+                "                                   ",
+                "                                   ",
+                "                                   ",
+                "xxxxxxxxxxx     xxxxxxxxxxxxxxxxxxx",
+                "x                                 x",
+                "x                                 x",
+                "x                      ^          x",
+                "x                                 x",
+                "x    A                             x",
+                "x    ^                            x",
+                "x                                 x",
+                "x                             ^   x",
+                "x                                 x",
+                "x                                 x",
+                "x                                 x",
+                "x          ^                      x",
+                "x                                 x",
+                "x                                 x",
+                "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            ], {
+            tileWidth: 40,
+            tileHeight: 30,
 
-                // }
+            tiles: {
+                "x": () => [
+                    sprite("block"),
+                    scale(0.1),
+                ],
+                width: 65,
+                height: 65,
+                "^": () => [
+                    sprite("table"),
+                    scale(0.5),
+                ],
+                "A": () => [
+                    sprite("bread"),
+                    scale(0.4),
+                ]
+            }
+        })
 
-    addLevel([
-    "                                   ",
-    "                                   ",
-    "                                   ",
-    "                                   ",
-    "                                   ",
-    "                                   ",
-	"xxxxxxxxxxx     xxxxxxxxxxxxxxxxxxx",
-	"x                                 x",
-	"x                                 x",
-	"x                      ^          x",
-	"x                                 x",
-	"x                                 x",
-	"x    ^                            x",
-    "x                                 x",
-	"x                             ^   x",
-	"x                                 x",
-    "x                                 x",
-	"x                                 x",
-	"x          ^                      x",
-    "x                                 x",
-	"x                                 x",
-	"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-],
-{
-    tileWidth: 40,
-    tileHeight: 30,
-
-	tiles: {
-        "x": () => [
-		sprite("block"),
-    scale(0.1),
-	],
-	width: 65,
-	height: 65,
-	"^": () => [
-		sprite("table"),
-    scale(0.5),
-	],
-    width: 65,
-	height: 65,
-	"*": () => [
-		sprite("door"),
-    scale(0.3),
-    rotate(90),
-	],
-     }
-})
-
-// player.onCollide("door", () => {
-// 		if (hasKey) {
-// 			if (levelIdx + 1 < levels.length) {
-// 				go("main", levelIdx + 1)
-// 			} else {
-// 				go("win")
-// 			}
-// 		} else {
-// 			dialog.say("you got no key!")
-// 		}
-
-
+    
         </script>
     </body>
 </html>

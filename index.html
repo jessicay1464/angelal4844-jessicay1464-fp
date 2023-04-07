@@ -55,6 +55,47 @@
                 onKeyDown("down", () => {
 	        player.move(0, SPEED)
                 })
+
+                addLevel([
+    "                                   ",
+    "                                   ",
+    "                                   ",
+    "                                   ",
+    "                                   ",
+    "                                   ",
+	"xxxxxxxxxxx     xxxxxxxxxxxxxxxxxxx",
+	"x                                 x",
+	"x                                 x",
+	"x                      ^          x",
+	"x                                 x",
+	"x                                 x",
+	"x    ^                            x",
+    "x                                 x",
+	"x                             ^   x",
+	"x                                 x",
+    "x                                 x",
+	"x                                 x",
+	"x          ^                      x",
+    "x                                 x",
+	"x                                 x",
+	"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+], {
+    tileWidth: 10,
+    tileHeight: 20,
+
+	tiles: {
+        "x": () => [
+		sprite("block"),
+    scale(0.1),
+	],
+	width: 65,
+	height: 65,
+	"^": () => [
+		sprite("table"),
+    scale(0.1),
+	],
+    }
+})
         </script>
     </body>
 </html>

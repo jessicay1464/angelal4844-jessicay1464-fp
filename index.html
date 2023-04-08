@@ -39,10 +39,20 @@
             const player = add ([
                 sprite("block"),
                 scale(0.1),
-                pos(60, 40)
+                pos(60, 133),
+                solid(),
+                area(),
             ])
 
-            const SPEED = 120
+            const SPEED = 480
+            const JUMP_FORCE = 20000
+            const FALL_DEATH = 2400
+
+//             onKeyPress("space", () => {
+// 	if (player.isGrounded()) {
+// 		player.jump(JUMP_FORCE)
+// 	}
+// })
 
             onKeyDown("left", () => {
 	        player.move(-SPEED, 0)
@@ -52,51 +62,55 @@
 	        player.move(SPEED, 0)
                 })
 
-                onKeyDown("up", () => {
-	        player.move(0, -SPEED)
-                })
 
                 onKeyDown("down", () => {
 	        player.move(0, SPEED)
                 })
 
+                onKeyDown("up", () => {
+	        player.move(0, -SPEED)
+                })
+
+
+
             addLevel([
                 "                                   ",
+                "               ^.                  ",
                 "                                   ",
                 "                                   ",
                 "                                   ",
-                "                                   ",
-                "                                   ",
+                "                                  ",
                 "xxxxxxxxxxx     xxxxxxxxxxxxxxxxxxx",
                 "x          x                      x",
                 "x           x                     x",
-                "x            x          ^         x",
-                "x             x                   x",
-                "x   A          x                  x",
-                "x   ^           x                 x",
-                "x                x          $     x",
-                "x                 x         ^     x",
-                "x                  x              x",
+                "x            x                    x",
+                "x ^           x       ^           x",
+                "x              x                  x",
+                "x               x                 x",
+                "x                x                x",
+                "x                 x               x",
+                "x       A         xxxxxxxxx       x",
                 "x                                 x",
                 "x                                 x",
-                "x          ^                      x",
+                "x                                 x",
                 "x                                 x",
                 "x                                 x",
                 "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             ], {
             tileWidth: 40,
             tileHeight: 30,
-
-            tiles: {
+        tiles: {
                 "x": () => [
                     sprite("block"),
                     scale(0.1),
+                    area(),
+                    solid()
                 ],
                 width: 65,
                 height: 65,
                 "^": () => [
                     sprite("table"),
-                    scale(0.5),
+                    scale(0.8),
                 ],
                 "A": () => [
                     sprite("bread"),
@@ -108,6 +122,66 @@
                 ]
             }
         })
+
+
+        // const map = [
+        //         "                                   ",
+        //         "               ^.                  ",
+        //         "                                   ",
+        //         "                                   ",
+        //         "                                   ",
+        //         "                                  ",
+        //         "xxxxxxxxxxx     xxxxxxxxxxxxxxxxxxx",
+        //         "x          x                      x",
+        //         "x           x                     x",
+        //         "x            x                    x",
+        //         "x ^           x       ^           x",
+        //         "x              x                  x",
+        //         "x               x                 x",
+        //         "x                x                x",
+        //         "x                 x               x",
+        //         "x       A         xxxxxxxxx       x",
+        //         "x                                 x",
+        //         "x                                 x",
+        //         "x                                 x",
+        //         "x                                 x",
+        //         "x                                 x",
+        //         "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        // ]
+
+        // const levelCfg = {
+        //     tileWidth: 40,
+        //     tileHeight: 30,
+
+        //     tiles: {
+        //         "x": () => [
+        //             sprite("block"),
+        //             scale(0.1),
+        //             // area(),
+        //             // solid()
+
+        //         ],
+        //         width: 65,
+        //         height: 65,
+        //         "^": () => [
+        //             sprite("table"),
+        //             scale(0.8),
+        //             // area(),
+        //             // solid()
+        //         ],
+        //         "A": () => [
+        //             sprite("bread"),
+        //             scale(0.4),
+        //             // area(),
+        //             // body()
+        //             // // solid()
+        //         ]
+        //     }
+
+        // }
+        // addLevel(map, levelCfg)
+
+
 
 
         </script>

@@ -26,8 +26,10 @@
 
             loadSprite("background", "img/background-3.jpg");
             loadSprite("block", "img/block-6.png");
-            loadSprite("table", "img/table2.png");
+            loadSprite("table", "img/table.png");
             loadSprite("bread", "img/bread.png");
+            loadSprite("cheese", "img/cheese.png");
+
 
 
             add ([
@@ -66,15 +68,15 @@
                 "                                   ",
                 "                                   ",
                 "xxxxxxxxxxx     xxxxxxxxxxxxxxxxxxx",
-                "x          x                       x",
-                "x           x                      x",
-                "x            x          ^          x",
-                "x             x                    x",
-                "x    A         x                   x",
-                "x   ^           x                  x",
-                "x                x                 x",
-                "x                 x            ^   x",
-                "x                  x               x",
+                "x          x                      x",
+                "x           x                     x",
+                "x            x          ^         x",
+                "x             x                   x",
+                "x   A          x                  x",
+                "x   ^           x                 x",
+                "x                x          $     x",
+                "x                 x         ^     x",
+                "x                  x              x",
                 "x                                 x",
                 "x                                 x",
                 "x          ^                      x",
@@ -99,6 +101,10 @@
                 "A": () => [
                     sprite("bread"),
                     scale(0.4),
+                ],
+                "$": () => [
+                    sprite("cheese"),
+                    scale(0.3),
                 ]
             }
         })
